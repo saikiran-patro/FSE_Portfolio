@@ -78,17 +78,22 @@
   --light-gray-70:#d6d6d6b3;
   --fs-8:12px;
 }
+body{
+
+
+  background-color: #121212;
+}
 .globalContainer {
   width: 100vw;
-    height: 100vh;
+   
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .container{
-  height: 95%;
-  width: 80%;
+
+  width: 100%;
   max-width: 1200px;
   border-radius: 15px;
   display: flex;
@@ -99,11 +104,14 @@
   padding: 15px;
   box-shadow: var(--shawdow);
   z-index: 1;
+  padding-top: 0px;
+  padding-right: 0px;
 }
 .profilePicContainer{
 
   background:var(--bg-gradient-onyx);
   border-radius: 20px;
+  margin-top: 20px;
 }
 .iconBox{
   font-size: 18px;
@@ -159,4 +167,38 @@ ul >li {
   top: 10px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.typeCat{
+  font-size:20px;
+  color:white;
+  font-weight:bold;
+  position: relative;
+ 
+
+}
+.typeCat::after{
+  
+  content:'';
+  height:5px;
+  width: 60px;
+  display: block;
+  background: linear-gradient(to right, #ec9162, #ff623e);
+  margin-top: 12px;
+  border-radius: 20px;
+
+}
+.specialCards{
+
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  width: 80%;
+  gap: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #d1cac629, #38383fc6);
+  padding: 15px;
+  border-radius: 10px;
+}
+.specialCards img{
+  width: 30px;
 }
