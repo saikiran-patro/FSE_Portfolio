@@ -1,15 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import appStore from './constant.js/appStore';
 import DotBox from './components/DotBox'
 import MainContainer from './components/MainContainer';
+import { Provider } from 'react-redux';
 function App() {
   return (
-    <div className="App">
-            <DotBox />
+    <Provider store={appStore}>    
+      
+      <div className="App">
+      <DotBox />
       <MainContainer />
 
     </div>
+    </Provider>
+
   );
 }
 

@@ -16,7 +16,7 @@ export const cloudProps = {
   options: {
     reverse: true,
     depth: 1,
-    wheelZoom: false,
+    wheelZoom:false,
     imageScale: 2,
     activeCursor: "default",
     tooltip: "native",
@@ -40,7 +40,7 @@ export const renderCustomIcon = (icon, theme) => {
     bgHex,
     fallbackHex,
     minContrastRatio,
-    size: 42,
+    size: 60,
     aProps: {
       href: undefined,
       target: undefined,

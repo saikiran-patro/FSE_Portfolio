@@ -202,3 +202,52 @@ ul >li {
 .specialCards img{
   width: 30px;
 }
+
+.expContainer::before{
+  content: '';
+  height: 30px;
+  width: 2px;
+  background-color: #504e4c;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  z-index: -3;
+
+}
+.expSecContainer::before{
+  top:-58px;
+  height: 55px;
+}
+
+.roleContainer {
+  margin-left: 66px;
+}
+
+.roleContainer >li{
+
+  margin-top: 8px;
+  font-size: 14px;
+}
+.roleContainer::before{
+  content: '';
+  height: calc(100% - 15px);
+  width: 2px;
+  background-color: #504e4c;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  z-index: -3;
+}
+
+
+.exPoint::before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -48px;
+  height: 6px;
+  width: 6px;
+  background: linear-gradient(to right, #ec9162, #ff623e);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #7d584542;
+}
