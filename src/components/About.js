@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{ useRef, useEffect,useContext}  from 'react'
 import { IconSkills } from './IconSkills';
+import { navBarContext } from "./RightContainer";
 const About = () => {
 
   const skills = [
@@ -19,9 +20,28 @@ const About = () => {
     "Python",
     "DSA"
   ];
+  const aboutContainer=useRef(null);
+  
+     const {navBarElement}=useContext(navBarContext)
+     console.log(navBarElement)
+     useEffect(()=>{
+      if (navBarElement?.current && aboutContainer?.current) {
+        const navbarHeight = navBarElement.current.getBoundingClientRect().height;
+     
+  
+        // Corrected this line to use aboutContainer.current.style.height
+        aboutContainer.current.style.height = `calc(100% - ${navbarHeight}px)`;
+        aboutContainer.current.style.overflow = 'scroll';
+        aboutContainer.current.style.overflowX = 'hidden';
+        
+      
+      }
+      
+     },[])
+  
   
   return (
-    <div>
+    <div ref={aboutContainer}>
        <div className="flex justify-center items-center mt-4"> 
           <div className="w-[90%]">
              <p>I am a passionate Frontend Developer with extensive experience in building high-quality, large-scale, full-stack applications using JavaScript, Node.js, React JS, Python, and MongoDB. I thrive on creating highly available, performant systems that deliver seamless user experiences.</p>

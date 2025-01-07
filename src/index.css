@@ -68,6 +68,28 @@
   }
 }
 
+/* For WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 3px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #77483000; /* Scrollbar thumb color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #77483000; ; /* Color when hovered */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1c1c1df5; /* Background track color */
+}
+
+/* Optional: Style horizontal scrollbar separately */
+::-webkit-scrollbar:horizontal {
+  height: 10px; /* Horizontal scrollbar height */
+}
 
 :root{
 

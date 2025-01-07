@@ -1,8 +1,34 @@
-import React from "react";
+import React,{ useRef, useEffect,useContext} from "react";
 import DownloadBtn from "./DownloadBtn";
+import { navBarContext } from "./RightContainer";
 const Resume = () => {
+
+
+   const resumeContainer=useRef(null);
+
+   const {navBarElement}=useContext(navBarContext)
+   console.log(navBarElement)
+   useEffect(()=>{
+    if (navBarElement?.current && resumeContainer?.current) {
+      const navbarHeight = navBarElement.current.getBoundingClientRect().height;
+      console.log(navBarElement.current.getBoundingClientRect());
+
+      // Corrected this line to use resumeContainer.current.style.height
+      resumeContainer.current.style.height = `calc(100% - ${navbarHeight}px)`;
+      resumeContainer.current.style.overflow = 'scroll';
+      resumeContainer.current.style.overflowX = 'hidden';
+      
+    
+    }
+    
+   },[])
+
+
+
+
+
   return (
-    <div className="w-full relative ">
+    <div ref={resumeContainer} className="w-full relative ">
       <DownloadBtn />
       <div>
         <div className="flex items-center justify-start pt-10 gap-5">
@@ -159,9 +185,50 @@ const Resume = () => {
             </ul>
           </div>
         </div>
+        <div className="mt-8 relative">
+        <div className="flex gap-5 expContainer">
+          <div className="iconBox h-fit">
+             <img src={require('../Assets/cup.svg').default} />
+          </div>
+          <div className="w-3/4 flex items-center">
+            <h1 className="text-[1rem] font-bold">Acheievements</h1>
+          
+          </div>
+          </div>
+          <div className="relative  w-[95%]">
+            <ul className="roleContainer  ">
+              <div className="relative">
+                <li className="exPoint">
+                Solved <span className="text-[#ec9162] font-bold">400+ Data Structures and Algorithmic Problems</span> on coding platforms like <span className="text-[#ec9162] font-bold">CodeStudio</span> and <span className="text-[#ec9162] font-bold">GFG</span>.
+                  
+                </li>
+              </div>
+              <div className="relative">
+                <li className="exPoint">
+                Won <span className="text-[#ec9162] font-bold">1st</span> place at the Hardware Expo competition, outperforming 80+ projects with an innovative <span className="text-[#ec9162] font-bold">Fall Detection system</span>
+               
+                </li>
+              </div>
+              <div className="relative">
+                <li className="exPoint">
+                <span className="text-[#ec9162] font-bold">GitHub opensource</span> contribution - Arctic Code Vault Contributor
+               
+                </li>
+              </div>
+              <div className="relative">
+                <li className="exPoint">
+                Shared knowledge on <span className="text-[#ec9162] font-bold">YouTube</span>, achieving over <span className="text-[#ec9162] font-bold">100k+</span> views and building a community of 750+ subscribers.
+                </li>
+              </div>
+             
+              
+            </ul>
+          </div>
+          </div>
       </div>
     </div>
   );
 };
 
 export default Resume;
+

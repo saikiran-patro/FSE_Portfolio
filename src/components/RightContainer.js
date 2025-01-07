@@ -1,30 +1,37 @@
-import React from 'react'
+import React,{lazy,Suspense,createContext,useRef} from 'react'
 import Navbar from './Navbar'
 import About from './About'
 import { useSelector } from 'react-redux'
-import Resume from './Resume'
+import Shimmer from './ui/Shimmer'
 import Projects from './Projects'
 import Youtube from './Youtube'
+
 import Contact from './Contact'
+
+// Create and export navBarContext outside the Navbar component
+export const navBarContext = createContext(null);
 const RightContainer = () => {
 
-
+  const LazyComponent=lazy(()=> import('./Resume'))
   const store=useSelector((store)=> store.window)
   const windowObject={
 
     "About":<About />,
-    "Resume":<Resume />,
+    "Resume":<Suspense fallback={<Shimmer />}><LazyComponent /></Suspense>,
     "Projects":<Projects />,
     "Youtube":<Youtube />,
     "Contact":<Contact />
 
 
   }
+  const navBarRef = useRef(null);
   return (
-    <div className="w-[70%]">
-        <Navbar />
+    <navBarContext.Provider value={{navBarElement:navBarRef}}>
+    <div className="w-[70%] h-[857px]">
+        <Navbar navBarRef={navBarRef} />
         {windowObject[store]}
     </div>
+    </navBarContext.Provider>
   )
 }
 
