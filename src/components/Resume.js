@@ -28,7 +28,7 @@ const Resume = () => {
 
 
   return (
-    <div ref={resumeContainer} className="w-full relative ">
+    <div ref={resumeContainer} className=" animateContainer w-full relative ">
       <DownloadBtn />
       <div>
         <div className="flex items-center justify-start pt-10 gap-5">

@@ -1,6 +1,6 @@
-import React, { useState, createContext, useRef, useEffect } from 'react'
+import React, { useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { changeWindow } from '../constant.js/windowSlice'
+import { changeWindow } from '../constants/windowSlice'
 
 import { navBarContext } from './RightContainer'
 

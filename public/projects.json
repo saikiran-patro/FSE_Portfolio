@@ -1,0 +1,96 @@
+{
+    "projects": [
+      {
+        "name": "Netflix GPT",
+        "category": "Gen AI",
+        "bannerImage": "./Assets/Projects/GenAI/Netflix_GPT.png", 
+        "description": "Netflix GPT is a clone of Netflix UI powered by generative AI search features and much more. It includes list of movies and shows available.",
+        "technologies": ["React", "Redux", "Firebase","Html","Tailwind CSS","Gemini"],
+        "github": "https://github.com/saikiran-patro/NetflixGPT",
+        "youtube": "https://youtu.be/sdSF-2_gxXc"
+      },
+      {
+        "name":"Querify AI",
+        "category":"Gen AI",
+        "bannerImage":"./Assets/Projects/GenAI/Querify_AI.png",
+        "description":"Querify AI is a full stack social Media application for all the queries and solutions from peers. You can create your own profile and list all your queries and get solutions instantly from others.",
+        "technologies":["Html","Css","Javascript","Sockets","Python","Flask","Gemini","MySQL"],
+        "github":"https://github.com/saikiran-patro/Querify",
+        "youtube":"https://youtu.be/avIcr-gPFlA"
+      },
+      {
+        "name":"Pulse AI music player",
+        "category":"Gen AI",
+        "bannerImage":"./Assets/Projects/GenAI/Pulse_AI_Music_Player.png",
+        "description":"A music player app powered by Generative AI features.",
+        "technologies":["Html","CSS","Javascript","Gemini"],
+        "github":"https://github.com/saikiran-patro/Pulse-Music-Player",
+        "youtube":"https://youtu.be/thp3XHEdflo"
+      },
+      {
+        "name":"Cancer Prediction",
+        "category":"Web",
+        "bannerImage":"./Assets/Projects/Web/Cancer_Prediction.png",
+        "description":"A web application that uses machine learning, deep learning models to predict the likelihood of developing a lung cancer.",
+        "technologies":["Html","CSS","Javascript","Python","Flask"],
+        "github":"https://github.com/saikiran-patro/CancerPrediction",
+        "youtube":null
+      },
+      {
+        "name":"Secure Contacts",
+        "category":"Web",
+        "bannerImage":"./Assets/Projects/Web/Secure_Contacts.png",
+        "description":"A secure way of storing contacts by encryption",
+        "technologies":["Html","CSS","Javascript","EJs","MongoDB","Node JS","Express JS"],
+        "github":"https://github.com/saikiran-patro/Contact-Manager-App",
+        "youtube":null
+
+      },
+      {
+        "name":"Word Book",
+        "category":"Web",
+        "bannerImage":"./Assets/Projects/Web/Word_Book.png",
+        "description":"A Google Chrome extension word book which is pretty useful in searching and knowing the meanings, synonyms and Antonyms of different words.",
+        "technologies":["Html","CSS","Javascript"],
+        "github":"https://github.com/saikiran-patro/Word-Book",
+        "youtube":null
+      },
+      {
+        "name":"Fall Detection System",
+        "category":"IoT",
+        "bannerImage":"./Assets/Projects/IoT/Fall_Detection.png",
+        "description":"A watch prototype designed to detect the accident fall of humans and sends notifications to the user.",
+        "technologies":["C++","ESP8266","IOT Core"],
+        "github":"https://github.com/saikiran-patro/Human-fall-detection-system",
+        "youtube":"https://www.youtube.com/watch?v=schAiYABB6k"
+      },
+      {
+        "name":"Voice Controlled Home Automation",
+        "category":"IoT",
+        "bannerImage":"./Assets/Projects/IoT/Voice_Controlled_Home_Automation.png",
+        "description":"A home automation integrated with my desktop assitant to control electrical appliances.",
+        "technologies":["Python","Bolt Cloud","TKinter"],
+        "github":"https://github.com/saikiran-patro/Voice-controlled-Home-Automation",
+        "youtube":"https://www.youtube.com/watch?v=IoOA29knfkg"
+      },
+      {
+        "name":"Tesla App",
+        "category":"Android",
+        "bannerImage":"./Assets/Projects/Android/Tesla_App.png",
+        "description":"Tesla UI Clone",
+        "technologies":["Javascript","React Native"],
+        "github":"https://github.com/saikiran-patro/Tesla-APP",
+        "youtube":null
+      },
+      {
+        "name":"Word Gen",
+        "category":"Android",
+        "bannerImage":"./Assets/Projects/Android/Word_Gen.png",
+        "description":"A simple word generator application that lets you know the meaning of new words.",
+        "technologies":["Javascript","React Native"],
+        "github":"https://github.com/saikiran-patro/LexiconMaster",
+        "youtube":null
+      }
+    ]
+  }
+  

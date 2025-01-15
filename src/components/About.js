@@ -41,7 +41,7 @@ const About = () => {
   
   
   return (
-    <div ref={aboutContainer}>
+    <div ref={aboutContainer}  className='animateContainer'>
        <div className="flex justify-center items-center mt-4"> 
           <div className="w-[90%]">
              <p>I am a passionate Frontend Developer with extensive experience in building high-quality, large-scale, full-stack applications using JavaScript, Node.js, React JS, Python, and MongoDB. I thrive on creating highly available, performant systems that deliver seamless user experiences.</p>

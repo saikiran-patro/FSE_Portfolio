@@ -1,5 +1,5 @@
 import './App.css';
-import appStore from './constant.js/appStore';
+import appStore from './constants/appStore';
 import DotBox from './components/DotBox'
 import MainContainer from './components/MainContainer';
 import { Provider } from 'react-redux';

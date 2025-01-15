@@ -106,8 +106,8 @@ body{
   background-color: #121212;
 }
 .globalContainer {
-  width: 100vw;
-   
+    width: 100vw;
+    height: 100vh;
     color: white;
     display: flex;
     justify-content: center;
@@ -217,9 +217,12 @@ ul >li {
   width: 80%;
   gap: 20px;
   font-weight: bold;
-  background: linear-gradient(to right, #d1cac629, #38383fc6);
+  background: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
   padding: 15px;
   border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 24px -6px rgba(56,56,56,1);
+    -moz-box-shadow: 10px 10px 24px -6px rgba(56,56,56,1);
+    box-shadow: 10px 10px 24px -6px rgba(56,56,56,1);
 }
 .specialCards img{
   width: 30px;
@@ -272,4 +275,82 @@ ul >li {
   background: linear-gradient(to right, #ec9162, #ff623e);
   border-radius: 50%;
   box-shadow: 0 0 0 4px #7d584542;
+}
+.typeBtn{
+  
+   
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border-radius: 10px;
+  color:  #ff623e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+
+}
+.projectContainer, .animateContainer{
+  animation: scaleUp 0.25s ease forwards;
+}
+
+@keyframes scaleUp {
+  
+  0% {
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+
+
+}
+/* youtube */
+.bannerContainer {
+  position: relative;
+    width: 96%;
+    height: 180px;
+    margin-top: 20px;
+    background-color: #28282a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.inner-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background:linear-gradient(to right, #ec9162, #ff623e);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.bannerContent {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+.ytDetailsContainer{
+
+    width: fit-content;
+    margin: 0px auto;
+    padding: 5px 15px;
+    margin-top: 28px;
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+    background: #28282A;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 5px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    right: -7px;
+}
+
+.ytDetailsContainer:nth-child(2){
+  top: 45px;
+}
+.ytDetailsContainer:nth-child(3){
+  top:90px
 }
