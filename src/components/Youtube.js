@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import FlickeringGrid from './ui/FlickeringGrid'
-import { LineShadowText  } from './ui/LineShadowText'
+
 import { TextAnimate  } from './ui/TextAnimate'
 import NumberTicker from './ui/NumberTicker'
 import YoutubeVideos from './YoutubeVideos'

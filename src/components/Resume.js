@@ -32,7 +32,7 @@ const Resume = () => {
       <div>
         <div className="flex items-center justify-start pt-10 gap-5">
           <div className="iconBox">
-            <img src={require("../Assets/building.svg").default} />
+            <img alt="Company" src={require("../Assets/building.svg").default} />
           </div>{" "}
           <h1 className="text-[1.2rem] font-bold">Experience</h1>{" "}
         </div>
@@ -40,7 +40,7 @@ const Resume = () => {
         <div className="mt-8 relative ">
           <div className="flex gap-5 expContainer">
             <div className="iconBox h-fit">
-              <img src={require("../Assets/tcs.svg").default} />
+              <img alt="tcs" src={require("../Assets/tcs.svg").default} />
             </div>
             <div className="w-3/4">
               <h1 className="text-[1rem] font-bold">
@@ -136,7 +136,7 @@ const Resume = () => {
         <div className="mt-8 relative ">
           <div className="flex gap-5 expContainer expSecContainer">
             <div className="iconBox h-fit">
-              <img src={require("../Assets/youtubeSe.svg").default} />
+              <img alt="youtube" src={require("../Assets/youtubeSe.svg").default} />
             </div>
             <div className="w-3/4">
               <h1 className="text-[1rem] font-bold">Youtube</h1>
@@ -187,7 +187,7 @@ const Resume = () => {
         <div className="mt-8 relative">
         <div className="flex gap-5 expContainer">
           <div className="iconBox h-fit">
-             <img src={require('../Assets/cup.svg').default} />
+             <img alt="Achievements" src={require('../Assets/cup.svg').default} />
           </div>
           <div className="w-3/4 flex items-center">
             <h1 className="text-[1rem] font-bold">Acheievements</h1>

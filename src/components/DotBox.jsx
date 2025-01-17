@@ -1,6 +1,6 @@
 import React from 'react'
 import DotPattern from './ui/dot-pattern'
-import { cn } from "../libs/utils";
+
 const DotBox = () => {
   return (
     <div>

@@ -16,7 +16,7 @@ const YoutubeVideos = ({ ytBannerRef }) => {
       ytVideosRef?.current &&
       ytNavbarRef?.current
     ) {
-      const navbarHeight = navBarElement.current.getBoundingClientRect().height;
+      
       const ytBannerHeight = ytBannerRef.current.getBoundingClientRect().height;
       const ytNavbarHeight = ytNavbarRef.current.getBoundingClientRect().height;
 

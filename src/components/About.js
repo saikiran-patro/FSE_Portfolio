@@ -51,7 +51,7 @@ const About = () => {
              </p>
           </div>
           <div className='max-mob:w-[60%] max-mob:mt-2'>
-              <img className='rounded-lg ' src={require('../Assets/Me.png')} />
+              <img className='rounded-lg ' alt="Me in Space" src={require('../Assets/Me.png')} />
           </div>
        </div>
        <div>
@@ -59,13 +59,13 @@ const About = () => {
           <div className='mt-[30px] flex items-center justify-center max-mob:flex-wrap'>
             <div className='w-[50%] max-mob:w-[90%]'>
                 <div className='specialCards'>
-                    <img src={require('../Assets/Code.svg').default} /> <span className='min-mob:text-[12px]'> Frontend Development</span>
+                    <img alt='code' src={require('../Assets/Code.svg').default} /> <span className='min-mob:text-[12px]'> Frontend Development</span>
                 </div>
                 <div className='specialCards'>
-                    <img src={require('../Assets/systems.svg').default} /><span className='min-mob:text-[12px]'> Systems Design</span>
+                    <img alt="systems" src={require('../Assets/systems.svg').default} /><span className='min-mob:text-[12px]'> Systems Design</span>
                 </div>
                 <div className='specialCards'>
-                    <img src={require('../Assets/Youtuebe.svg').default} /><span className='min-mob:text-[12px]'> Content Creation</span>
+                    <img alt="youtube" src={require('../Assets/Youtuebe.svg').default} /><span className='min-mob:text-[12px]'> Content Creation</span>
                 </div>
                 <p className='my-2 text-[1.2rem] text-[#708090]'>SKILLS</p>
                 <div className='flex w-full flex-wrap gap-2.5'>

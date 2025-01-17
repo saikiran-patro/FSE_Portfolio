@@ -1,7 +1,7 @@
 // import IconCloud from "../components/ui/icon-cloud";
 import { TransparencyGridIcon } from "@radix-ui/react-icons"
 import React from "react"
-import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions,renderSimpleIcon, fetchSimpleIcons, SimpleIcon } from 'react-icon-cloud'
+import { Cloud,renderSimpleIcon, fetchSimpleIcons} from 'react-icon-cloud'
 
 
 const useIcons = (slugs) => {
