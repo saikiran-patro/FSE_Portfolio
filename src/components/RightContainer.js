@@ -46,7 +46,7 @@ const RightContainer = ({leftContainerRef,rightContainerRef}) => {
     return () => {
         window.removeEventListener("resize", handleResize);
     };
-}, []);
+}, [leftContainerRef, rightContainerRef]);
  
   return (
     <navBarContext.Provider value={{navBarElement:navBarRef}}>

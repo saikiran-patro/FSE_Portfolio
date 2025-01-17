@@ -20,7 +20,7 @@ const LeftContainer = ({leftContainerRef,rightContainerRef}) => {
         <h2 className="text-2xl mb-2"> Sai Kiran Patro </h2>{" "}
         <div className="bg-[#2b2b2c] px-[20px] py-[5px] rounded-lg w-[170px] text-center">
           <WordRotate
-            className="text-[14px] font-bold text-white mt-2 "
+            className="text-[14px] font-bold text-white mt-0 p-0  "
             words={["Web Developer", "Software Engineer", "Content Creator"]}
           />
           </div>

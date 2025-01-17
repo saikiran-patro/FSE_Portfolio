@@ -6,7 +6,7 @@ import { Cloud,renderSimpleIcon, fetchSimpleIcons} from 'react-icon-cloud'
 
 const useIcons = (slugs) => {
   const [icons, setIcons] = React.useState()
-  React.useEffect(() => {fetchSimpleIcons({slugs}).then(setIcons)}, [])
+  React.useEffect(() => {fetchSimpleIcons({slugs}).then(setIcons)}, [slugs])
 
   if (icons) {
     return Object.values(icons.simpleIcons).map((icon) => renderSimpleIcon({
