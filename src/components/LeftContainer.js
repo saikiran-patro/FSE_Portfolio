@@ -1,24 +1,40 @@
 import React from "react";
 
 import WordRotate from "./ui/word-rotate";
-const LeftContainer = () => {
+const LeftContainer = ({leftContainerRef,rightContainerRef}) => {
+
+  function showMenu(){
+    leftContainerRef.current.classList.toggle('show')
+         
+    rightContainerRef.current.classList.toggle('!blur-[5px]');
+  }
   return (
-    <div className="w-[30%]">
+    <div ref={leftContainerRef} className="leftContainer w-[30%]">
+      <div className="relative">
       <div className="flex items-center flex-col gap-[20px]">
       
         <div className=" profilePicContainer flex items-center justify-center">
           <img className="w-[50%]" src={require("../Assets/ProfilePic.png")} />{" "}
         </div>
-        <h2 className="text-2xl"> Sai Kiran Patro </h2>{" "}
+        <div>
+        <h2 className="text-2xl mb-2"> Sai Kiran Patro </h2>{" "}
         <div className="bg-[#2b2b2c] px-[20px] py-[5px] rounded-lg w-[170px] text-center">
           <WordRotate
-            className="text-[14px] font-bold text-white "
+            className="text-[14px] font-bold text-white mt-2 "
             words={["Web Developer", "Software Engineer", "Content Creator"]}
           />
+          </div>
         </div>
       </div>
+      <div onClick={showMenu} className="hamMenu flex flex-col">
+                    <span className='transform origin-left rotate-45'></span>
+                    <span className="invisible"></span>
+                    <span className="transform origin-left -rotate-45"></span>
+      </div>
+      </div>
+      <div>
       <div className="infoContainer mt-5 pt-5">
-        <ul>
+        <ul className="w-fit mx-auto">
           <li className="flex w-full items-center gap-5 ">
           
             <div className="iconBox">
@@ -87,6 +103,7 @@ const LeftContainer = () => {
             
             
         </div>
+      </div>
       </div>
       <div>
 

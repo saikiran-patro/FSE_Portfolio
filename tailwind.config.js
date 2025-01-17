@@ -17,6 +17,16 @@ module.exports = {
   		}
   	},
   	extend: {
+		
+		screens: {
+				'max-mob': {
+					max: '700px'
+				},
+				'min-mob': {
+					max: '480px'
+				}
+				
+		},
   		colors: {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',

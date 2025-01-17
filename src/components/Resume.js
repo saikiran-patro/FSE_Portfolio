@@ -7,13 +7,12 @@ const Resume = () => {
    const resumeContainer=useRef(null);
 
    const {navBarElement}=useContext(navBarContext)
-   console.log(navBarElement)
+   
    useEffect(()=>{
     if (navBarElement?.current && resumeContainer?.current) {
       const navbarHeight = navBarElement.current.getBoundingClientRect().height;
-      console.log(navBarElement.current.getBoundingClientRect());
+     
 
-      // Corrected this line to use resumeContainer.current.style.height
       resumeContainer.current.style.height = `calc(100% - ${navbarHeight}px)`;
       resumeContainer.current.style.overflow = 'scroll';
       resumeContainer.current.style.overflowX = 'hidden';

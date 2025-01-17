@@ -20,7 +20,7 @@ const Youtube = () => {
         height={800}
         width={800}
       />
-      <div className='flex flex-row gap-4 w-4/5 absolute bottom-5 justify-center'>
+      <div className='flex flex-row gap-4 w-4/5 absolute bottom-5 justify-center min-mob:justify-start min-mob:ml-[10px]'>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#ec9162" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="16" height="22" x="4" y="1" rx="3"/><path d="M10 19h4"/></g></svg>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#ec9162" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21h5M12 21h-5"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="6;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21v-4"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="6;0"/></path><path fill="#ec9162" fill-opacity="0" stroke-dasharray="64" stroke-dashoffset="64" d="M12 17h-9v-12h18v12Z"><animate fill="freeze" attributeName="fill-opacity" begin="1s" dur="0.15s" values="0;0.3"/><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.6s" values="64;0"/></path></g></svg>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ec9162" d="m18.003 13.068l2.26-2.261A9 9 0 0 0 22.9 4.443V1.1h-3.343a9 9 0 0 0-6.364 2.636l-2.261 2.26l-5.657-.707L1.04 9.524L14.475 22.96l4.235-4.235zm-1.792 1.791l.393 3.143l-2.129 2.129l-1.768-1.768zm-7.07-7.071l-3.505 3.504L3.87 9.524l2.129-2.129zm-3.505 9.16l-3.535 3.536L.687 19.07l3.535-3.535zm2.829 2.83l-3.536 3.535l-1.414-1.414l3.535-3.536z"/></svg>
@@ -28,12 +28,12 @@ const Youtube = () => {
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#ec9162" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#ec9162"><path d="M14 2h-4c-3.28 0-4.919 0-6.081.814a4.5 4.5 0 0 0-1.105 1.105C2 5.08 2 6.72 2 10s0 4.919.814 6.081a4.5 4.5 0 0 0 1.105 1.105C5.08 18 6.72 18 10 18h4c3.28 0 4.919 0 6.081-.814a4.5 4.5 0 0 0 1.105-1.105C22 14.92 22 13.28 22 10s0-4.919-.814-6.081a4.5 4.5 0 0 0-1.105-1.105C18.92 2 17.28 2 14 2"/><path d="m16 8l1.227 1.057c.515.445.773.667.773.943s-.258.498-.773.943L16 12M8 8L6.773 9.057C6.258 9.502 6 9.724 6 10s.258.498.773.943L8 12m5-5l-2 6m3.656 9l-.42-.419a3.1 3.1 0 0 1-.58-3.581M9 22l.42-.419A3.1 3.1 0 0 0 10 18m-3 4h10"/></g></svg>
       </div>
           <div className="bannerContent">
-          <h1 style={{fontFamily:'"Exo 2", serif'}} className='italic text-bold text-[#ec9162] text-3xl  '><TextAnimate animation="blurInUp" by="character">Sai Kiran Patro </TextAnimate></h1>
-              <TextAnimate animation="blurInUp" by="character">
+          <h1 style={{fontFamily:'"Exo 2", serif'}} className='italic text-bold text-[#ec9162] text-3xl min-mob:text-[20px]  '><TextAnimate animation="blurInUp" by="character">Sai Kiran Patro </TextAnimate></h1>
+              <TextAnimate className="min-mob:text-[16px]" animation="blurInUp" by="character">
                   Informative Tech Content
              </TextAnimate>
           </div>
-          <div className="inner-div">
+          <div className="inner-div min-mob:bg-transparent">
               <div className='flex justify-center items-center ytDetailsContainer'>
                 <p className='text-[12px] font-medium text-white'>Videos </p>&nbsp;&nbsp;
                 <p className="whitespace-pre-wrap text-[12px] font-medium tracking-tighter text-white dark:text-white">
