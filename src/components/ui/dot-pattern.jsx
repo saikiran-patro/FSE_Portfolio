@@ -33,7 +33,7 @@ export function DotPattern({
           {Array.from({ length: rows * columns }).map((_, index) => {
             const row = Math.floor(index / columns);
             const col = index % columns;
-            const opacity = Math.max(1 - fadeFactor * (row + col), 0);
+          
 
             return (
               <circle
