@@ -6,7 +6,7 @@ const LeftContainer = ({leftContainerRef,rightContainerRef}) => {
   function showMenu(){
     leftContainerRef.current.classList.toggle('show')
          
-    rightContainerRef.current.classList.toggle('!blur-[5px]');
+   
   }
   return (
     <div ref={leftContainerRef} className="leftContainer w-[30%]">
@@ -17,7 +17,7 @@ const LeftContainer = ({leftContainerRef,rightContainerRef}) => {
           <img className="w-[50%]" src={require("../Assets/ProfilePic.png")} alt="profile pic"/>{" "}
         </div>
         <div>
-        <h2 className="text-2xl mb-2"> Sai Kiran Patro </h2>{" "}
+        <h2 className="text-2xl mb-2 text-center"> Sai Kiran Patro </h2>{" "}
         <div className="bg-[#2b2b2c] px-[20px] py-[5px] rounded-lg w-[170px] text-center">
           <WordRotate
             className="text-[14px] font-bold text-white mt-0 p-0  "

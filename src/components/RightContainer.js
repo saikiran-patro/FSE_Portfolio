@@ -1,4 +1,4 @@
-import React,{lazy,Suspense,createContext,useRef,useEffect} from 'react'
+import React,{lazy,Suspense,createContext,useRef} from 'react'
 import Navbar from './Navbar'
 import About from './About'
 import { useSelector } from 'react-redux'
@@ -25,28 +25,7 @@ const RightContainer = ({leftContainerRef,rightContainerRef}) => {
 
   }
   const navBarRef = useRef(null);
-  useEffect(() => {
-    const handleResize = () => {
-      
-       if (parseInt(rightContainerRef.current.getBoundingClientRect().width)===815 || parseInt(rightContainerRef.current.getBoundingClientRect().width)===793 || 
-      parseInt(leftContainerRef.current.getBoundingClientRect().left)=== 117){
-     
-        rightContainerRef.current.classList.remove("!blur-[5px]")
-       }
-       else{
-
-         if(leftContainerRef.current.classList.contains("show") &&  parseInt(leftContainerRef.current.getBoundingClientRect().left)!== 117){
-          rightContainerRef.current.classList.add("!blur-[5px]")
-         }
-       
-       }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-        window.removeEventListener("resize", handleResize);
-    };
-}, [leftContainerRef, rightContainerRef]);
+  
  
   return (
     <navBarContext.Provider value={{navBarElement:navBarRef}}>

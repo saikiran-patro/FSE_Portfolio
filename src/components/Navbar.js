@@ -19,7 +19,7 @@ const Navbar = ({navBarRef,leftContainerRef,rightContainerRef}) => {
     function showMenu(){
       leftContainerRef.current.classList.toggle('show');
       rightContainerRef.current.style.transition='all 1s ease-in-out'
-      rightContainerRef.current.classList.toggle('!blur-[5px]');
+      
     }
     useEffect(()=>{
       setMyCategory(store);
