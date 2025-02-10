@@ -49,7 +49,7 @@ const Youtube = () => {
               <div className='flex justify-center items-center ytDetailsContainer'>
                 <p className='text-[12px] font-medium text-white'>Subscribers </p>&nbsp;&nbsp;
                 <p className="whitespace-pre-wrap text-[12px] font-medium tracking-tighter text-white dark:text-white">
-                <NumberTicker className="text-white" value={776} />
+                <NumberTicker className="text-white" value={786} />
                 </p>
               </div>
           </div>
