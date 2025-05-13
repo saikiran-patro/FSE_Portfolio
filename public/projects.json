@@ -1,6 +1,15 @@
 {
     "projects": [
       {
+        "name": "TowerLink AI",
+        "category": "Gen AI",
+        "bannerImage": "./Assets/Projects/GenAI/TowerLinkAi.jpg",
+        "description": "TowerLink AI is a real-time full stack chat application with a space-themed UI, powered by Generative AI. It supports end-to-end encryption, AI chatbot with text+image input, real-time notifications, and seen/unseen message status.",
+        "technologies": ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "Socket.IO", "Tailwind CSS", "Gemini API"],
+        "github": "https://github.com/saikiran-patro/TowerLink_AI",
+        "youtube": "https://youtu.be/Wz8Si9eActU"
+      },
+      {
         "name": "Netflix GPT",
         "category": "Gen AI",
         "bannerImage": "./Assets/Projects/GenAI/Netflix_GPT.png", 
