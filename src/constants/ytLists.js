@@ -30,6 +30,12 @@ const youtubeList= {
     ],
     "Tech Explained":[
       {
+        title:"Cyber Attacks Explained",
+        bannerImagePath:'./Assets/Youtube/CyberAttacks.jpg',
+        videoId:"si=2OCwJ9HV_dPR2gwF",
+        viewUrl:"https://youtu.be/QJUTclhburc"
+      },
+      {
         title:"Web 3.0 Explained",
         bannerImagePath:'./Assets/Youtube/Web_3.0_explained.jpg',
         videoId:"WTUULDLrf-k",
@@ -83,6 +89,12 @@ const youtubeList= {
 
     ],
     "Programming":[
+      {
+       title:"TowerLink AI- A Fullstack Chat App",
+       bannerImagePath:'./Assets/Youtube/TowerLinkAi.jpg',
+       videoId:'Wz8Si9eActU',
+       viewUrl:'https://youtu.be/Wz8Si9eActU'
+      },
       {
         title:"Pulse AI music player",
         bannerImagePath:'./Assets/Youtube/Pulse_AI_Music_Player.png',
