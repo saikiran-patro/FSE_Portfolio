@@ -1,91 +1,17 @@
-import React,{ useRef, useEffect,useContext}  from 'react'
+import React from 'react';
+import { Code2, Bot, Youtube, Rocket } from 'lucide-react';
 import { IconSkills } from './IconSkills';
-import { navBarContext } from "./RightContainer";
-const About = () => {
-
-  const skills = [
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "JavaScript",
-    "React.js",
-    "React Native",
-    "Redux",
-    "MongoDB",
-    "MySQL",
-    "Node.js",
-    "Flask",
-    "Git",
-    "C++",
-    "Python",
-    "DSA"
-  ];
-  const aboutContainer=useRef(null);
-  
-     const {navBarElement}=useContext(navBarContext)
-  
-     useEffect(()=>{
-      if (navBarElement?.current && aboutContainer?.current) {
-        const navbarHeight = navBarElement.current.getBoundingClientRect().height;
-     
-  
-        // Corrected this line to use aboutContainer.current.style.height
-        aboutContainer.current.style.height = `calc(100% - ${navbarHeight}px)`;
-        aboutContainer.current.style.overflow = 'scroll';
-        aboutContainer.current.style.overflowX = 'hidden';
-        
-      
-      }
-      
-     },[navBarElement])
-  
-  
-  return (
-    <div ref={aboutContainer}  className='animateContainer'>
-       <div className="flex justify-center items-center mt-4 max-mob:flex-wrap"> 
-          <div className="w-[90%]">
-             <p>I am a passionate Frontend Developer with extensive experience in building high-quality, large-scale, full-stack applications using JavaScript, Node.js, React JS, Python, and MongoDB. I thrive on creating highly available, performant systems that deliver seamless user experiences.</p>
-             <p>
-                <br/>
-             As a technophile and content creator, I love exploring cutting-edge technologies. I am deeply fascinated by space and rocket science, taking inspiration from Elon Musk's vision for space exploration. My interest spans from building innovative applications to diving into the future of space technology. And yes, I’m also a huge Marvel fan! 😄
-             </p>
-          </div>
-          <div className='max-mob:w-[60%] max-mob:mt-2'>
-              <img className='rounded-lg ' alt="Me in Space" src={require('../Assets/Me.png')} />
-          </div>
-       </div>
-       <div>
-          <h1 className='text-[2rem] font-bold mt-5 max-mob:text-[1.5rem] max-mob:ml-[20px]'>What I Specialize In</h1>
-          <div className='mt-[30px] flex items-center justify-center max-mob:flex-wrap'>
-            <div className='w-[50%] max-mob:w-[90%]'>
-                <div className='specialCards'>
-                    <img alt='code' src={require('../Assets/Code.svg').default} /> <span className='min-mob:text-[12px]'> Frontend Development</span>
-                </div>
-                <div className='specialCards'>
-                    <img alt="systems" src={require('../Assets/systems.svg').default} /><span className='min-mob:text-[12px]'> Systems Design</span>
-                </div>
-                <div className='specialCards'>
-                    <img alt="youtube" src={require('../Assets/Youtuebe.svg').default} /><span className='min-mob:text-[12px]'> Content Creation</span>
-                </div>
-                <p className='my-2 text-[1.2rem] text-[#708090]'>SKILLS</p>
-                <div className='flex w-full flex-wrap gap-2.5'>
-                  {
-                    skills.map((skill)=>(
-                      <span className='bg-[#4f4c4c] px-2 py-1 rounded-md font-bold text-[#ec9162] min-mob:text-[12px] '>{skill}</span>
-                    ))
-                  }
-                </div>
-            </div>
-            <div className='w-1/2 max-mob:hidden'>
-                <IconSkills />
-            </div>
-            
-          </div>
-       </div>
-      
-
-    </div>
-  )
+import { skillGroups } from '../constants/portfolio';
+export default function About() {
+  return <div className="animateContainer"><p className="eyebrow">The person behind the code</p>
+    <h1>Engineer. Creator.<br /><span className="orange-text">Driven by curiosity.</span></h1>
+    <div className="bio-copy"><p>I’m Sai Kiran Patro, a frontend-focused full-stack engineer based in Hyderabad. I build React and TypeScript applications, connect them to reliable backends, and turn AI capabilities into experiences people can actually use.</p><p>At RealPage, I work on real-time voice agents, screen-sharing experiences, and multi-agent systems with LangGraph and Vertex AI. Before that, at TCS, I built a React subscription center serving 1.8 million active users.</p><p>Outside work, I’m a technophile and content creator who loves explaining software, electronics, space, and rocket science. Space exploration keeps me curious — and yes, I’m also a huge Marvel fan.</p></div>
+    <div className="interest-note"><Rocket size={20} /><span>Curious about the next frontier. On the web, in AI, and beyond Earth.</span></div>
+    <section className="section-block"><h2>What I specialize in</h2><div className="specialty-grid">
+      {[{ Icon: Code2, title: 'Frontend development', text: 'React, TypeScript, responsive interfaces, and full-stack applications.' }, { Icon: Bot, title: 'AI & systems design', text: 'Voice agents, orchestration, RAG, and cloud-native services.' }, { Icon: Youtube, title: 'Content creation', text: 'Making space tech, software projects, and electronics approachable.' }].map(({ Icon, title, text }) => <article className="specialty-card" key={title}><Icon size={24} /><h3>{title}</h3><p>{text}</p></article>)}
+    </div></section>
+    <section className="section-block skills-section" aria-labelledby="skills-heading"><div className="section-heading"><div><p className="eyebrow">My toolkit</p><h2 id="skills-heading">Skills, with a new dimension.</h2></div><span className="subtle-label">Always learning</span></div>
+      <div className="skills-layout"><div className="skill-groups">{skillGroups.map(({ title, skills }) => <div className="skill-group" key={title}><h3>{title}</h3><ul className="skill-chips">{skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>)}</div><IconSkills /></div>
+    </section>
+  </div>;
 }
-
-export default About

@@ -1,14 +1,23 @@
-import React from 'react'
-import ContactForm from './ContactForm'
-const Contact = () => {
-  return (
-    <div className='animateContainer'>
-      <div className='relative rounded-lg '>
-      <iframe title="Map Me" className="w-[90%] mx-auto my-5 rounded-lg saturate-25" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.57488219143!2d78.09622329032584!3d17.412106419460336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1737020382191!5m2!1sen!2sin" width="400" height="300"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <ContactForm />
+import React, { useState } from 'react';
+import { Mail, Phone, Linkedin, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { profile } from '../constants/portfolio';
+import ContactForm from './ContactForm';
+import DownloadBtn from './DownloadBtn';
+import ContactMap from './ContactMap';
+export default function Contact() {
+  const [copyStatus, setCopyStatus] = useState('');
+  async function copyEmail() {
+    try { await navigator.clipboard.writeText(profile.email); setCopyStatus('Email copied.'); }
+    catch { setCopyStatus('Copy unavailable. Select the email address above, or use Email me.'); }
+  }
+  return <div className="animateContainer"><p className="eyebrow">Start a conversation</p><h1>Good things start<br /><span className="orange-text">with a hello.</span></h1><p className="section-description">Hiring for frontend, full-stack, or AI engineering? Have a project in mind? Reach me directly.</p>
+    <ContactMap />
+    <div className="contact-options">
+      <a href={'mailto:' + profile.email}><Mail size={23} /><span><strong>Email me</strong><span className="contact-address">{profile.email}</span></span><ArrowUpRight size={18} /></a>
+      <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={23} /><span><strong>Connect on LinkedIn</strong><span>Professional updates & conversations</span></span><ArrowUpRight size={18} /></a>
+      <a href={'tel:' + profile.phone}><Phone size={23} /><span><strong>Call me</strong><span>+91 91828 63688</span></span><ArrowUpRight size={18} /></a>
     </div>
-  )
+    <div className="contact-actions"><button className="button button-secondary" onClick={copyEmail}>{copyStatus === 'Email copied.' ? <Check size={16} /> : <Copy size={16} />}Copy email</button><DownloadBtn /></div><p className="copy-status" role="status">{copyStatus}</p>
+    <div className="contact-form-section"><h2>Or leave a message.</h2><p className="section-description">Your message goes directly to my inbox.</p><ContactForm /></div>
+  </div>;
 }
-
-export default Contact

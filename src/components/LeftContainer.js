@@ -1,115 +1,134 @@
-import React from "react";
+import React, { useEffect, useId, useRef, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
+import { Mail, Phone, MapPin, Menu, X, Github, Linkedin, Youtube } from 'lucide-react';
+import { profile } from '../constants/portfolio';
+import DownloadBtn from './DownloadBtn';
+import codeStudio from '../Assets/codeProfiles/codestudio.svg';
+import hackerRank from '../Assets/codeProfiles/hackrank.svg';
+import gfg from '../Assets/codeProfiles/gfg.svg';
+import leetCode from '../Assets/codeProfiles/leetcode.svg';
 
-import WordRotate from "./ui/word-rotate";
-const LeftContainer = ({leftContainerRef,rightContainerRef}) => {
+const codeProfiles = [
+  ['Code Studio', 'https://www.naukri.com/code360/profile/0d5dd7cd-cdd7-4f1d-b84a-0c1322353376', codeStudio],
+  ['HackerRank', 'https://www.hackerrank.com/profile/saikiranpatro607', hackerRank],
+  ['GeeksforGeeks', 'https://www.geeksforgeeks.org/user/kiranpatro2018ece/', gfg],
+  ['LeetCode', 'https://leetcode.com/u/saikiranpatro198/', leetCode],
+];
 
-  function showMenu(){
-    leftContainerRef.current.classList.toggle('show')
-         
-   
-  }
+function ProfileDetails() {
   return (
-    <div ref={leftContainerRef} className="leftContainer w-[30%]">
-      <div className="relative">
-      <div className="flex items-center flex-col gap-[20px]">
-      
-        <div className=" profilePicContainer flex items-center justify-center">
-          <img className="w-[50%]" src={require("../Assets/ProfilePic.png")} alt="profile pic"/>{" "}
+    <>
+      <div className="profile-divider" />
+      <ul className="contact-list">
+        <li><span className="iconBox"><Mail size={19} aria-hidden="true" /></span><div><p className="contactTitle">Email</p><a href={'mailto:' + profile.email}>{profile.email}</a></div></li>
+        <li><span className="iconBox"><Phone size={19} aria-hidden="true" /></span><div><p className="contactTitle">Phone</p><a href={'tel:' + profile.phone}>+91 91828 63688</a></div></li>
+        <li><span className="iconBox"><MapPin size={19} aria-hidden="true" /></span><div><p className="contactTitle">Currently building at</p><p>RealPage · SDE 2</p></div></li>
+      </ul>
+      <DownloadBtn compact />
+      <div className="profile-divider" />
+      <section aria-label="Social profiles">
+        <p className="eyebrow text-center">Find me online</p>
+        <div className="social-links">
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+          <a href="https://www.youtube.com/saikiranpatro" target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube size={20} /></a>
+          <a href="https://www.instagram.com/saikiranpatro/" target="_blank" rel="noreferrer" aria-label="Instagram"><img src={require('../Assets/instagram.svg').default} alt="" /></a>
+          <a href="https://x.com/SaiKiranpatro9" target="_blank" rel="noreferrer" aria-label="X"><img src={require('../Assets/twitter.svg').default} alt="" /></a>
+          <a href="https://www.threads.net/@saikiranpatro" target="_blank" rel="noreferrer" aria-label="Threads"><img src={require('../Assets/threads.svg').default} alt="" /></a>
         </div>
-        <div>
-        <h2 className="text-2xl mb-2 text-center"> Sai Kiran Patro </h2>{" "}
-        <div className="bg-[#2b2b2c] px-[20px] py-[5px] rounded-lg w-[170px] text-center">
-          <WordRotate
-            className="text-[14px] font-bold text-white mt-0 p-0  "
-            words={["Web Developer", "Software Engineer", "Content Creator"]}
-          />
-          </div>
+      </section>
+      <section aria-label="Code profiles">
+        <p className="eyebrow text-center coding-label">Code profiles</p>
+        <div className="social-links">
+          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20} /></a>
+          {codeProfiles.map(([label, href, asset]) => <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer"><img src={asset} alt="" /></a>)}
         </div>
-      </div>
-      <div onClick={showMenu} className="hamMenu flex flex-col">
-                    <span className='transform origin-left rotate-45'></span>
-                    <span className="invisible"></span>
-                    <span className="transform origin-left -rotate-45"></span>
-      </div>
-      </div>
-      <div>
-      <div className="infoContainer mt-5 pt-5">
-        <ul className="w-fit mx-auto">
-          <li className="flex w-full items-center gap-5 ">
-          
-            <div className="iconBox">
-             
-              <img className="w-[20px]" src={require("../Assets/Email.svg").default} alt="Email"/>
-            </div>
-            <div>
-       
-              <p className="contactTitle"> EMAIL </p><a className="contactLink" href="mailto:saikiranpatro198@gmail.com">saikiranpatro198@gmail.com</a> 
-            </div>
-          </li>
-          <li className="flex w-full items-center gap-5 ">
-          
-          <div className="iconBox">
-           
-            <img className="w-[20px]"alt="phone"  src={require("../Assets/Phone.svg").default} />
-          </div>
-          <div>
-     
-            <p className="contactTitle"> PHONE </p><a className="contactLink" href="tel:+919182863688">+91 9182863688</a> 
-          </div>
-        </li>
-        <li className="flex w-full items-center gap-5 ">
-          
-          <div className="iconBox">
-           
-            <img className="w-[20px]" alt="calendar" src={require("../Assets/Calendar.svg").default} />
-          </div>
-          <div>
-     
-            <p className="contactTitle"> BIRTHDAY </p><span className="contactLink" >March 11, 2001</span> 
-          </div>
-        </li>
-        <li className="flex w-full items-center gap-5 ">
-          
-          <div className="iconBox">
-           
-            <img className="w-[20px]" alt="location" src={require("../Assets/Location.svg").default} />
-          </div>
-          <div>
-     
-            <p className="contactTitle"> LOCATION </p><span className="contactLink" >Hyderabad, Telangana, India</span> 
-          </div>
-        </li>
-        </ul>
-      </div>
-      <div className="mt-5 codeProfiles pt-8">
-        <p className="text-center text-gray-400 ">CODE PROFILES</p>
-        <div className="flex justify-center items-center gap-5 mt-5">
-            <a  className="profileLinks" href="https://github.com/saikiran-patro" title="Github" target="_blank" rel="noreferrer"  ><img alt="github" src={require("../Assets/codeProfiles/github.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.naukri.com/code360/profile/0d5dd7cd-cdd7-4f1d-b84a-0c1322353376" title="Code Studio" target="_blank" rel="noreferrer" ><img alt="code studio" src={require("../Assets/codeProfiles/codestudio.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.hackerrank.com/profile/saikiranpatro607" title="Hackerrank" target="_blank"rel="noreferrer"  ><img alt="hacker rank" src={require("../Assets/codeProfiles/hackrank.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.geeksforgeeks.org/user/kiranpatro2018ece/" title="GFG" target="_blank" rel="noreferrer" ><img alt="Gfg" src={require("../Assets/codeProfiles/gfg.svg").default} /></a>
-            <a  className="profileLinks" href="https://leetcode.com/u/saikiranpatro198/" title="Leetcode" target="_blank" rel="noreferrer" ><img alt="leetcode" src={require("../Assets/codeProfiles/leetcode.svg").default} /></a>
-            
-        </div>
-      </div>
-      <div className="mt-5 codeProfiles pt-8">
-        <p className="text-center text-gray-400 ">SOCIAL PROFILES</p>
-        <div className="flex justify-center items-center gap-5 mt-5">
-            <a  className="profileLinks" href="https://www.youtube.com/saikiranpatro" title="youtube" target="_blank" rel="noreferrer"  ><img alt="youtube" src={require("../Assets/Youtuebe.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.linkedin.com/in/sai-kiran-patro/" title="LinkedIn" target="_blank" rel="noreferrer" ><img alt="linkedin" src={require("../Assets/linkedIn.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.instagram.com/saikiranpatro/" title="Instagram" target="_blank" rel="noreferrer" ><img alt="instagram" src={require("../Assets/instagram.svg").default} /></a>
-            <a  className="profileLinks"href="https://x.com/SaiKiranpatro9?t=Ap-XHnSc09wOnk4f21Sztg&s=08" title="Twitter" target="_blank"rel="noreferrer"  ><img alt="twitter" src={require("../Assets/twitter.svg").default} /></a>
-            <a  className="profileLinks"href="https://www.threads.net/@saikiranpatro" title="Threads" target="_blank" rel="noreferrer" ><img alt="threads" src={require("../Assets/threads.svg").default} /></a>
-            
-            
-        </div>
-      </div>
-      </div>
-      <div>
-
-      </div>
-    </div>
+      </section>
+      <p className="profile-signoff">Frontend · Full-stack · AI agents</p>
+    </>
   );
-};
+}
 
-export default LeftContainer;
+export default function LeftContainer() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
+  const reducedMotion = useReducedMotion();
+  const dialogRef = useRef(null);
+  const triggerRef = useRef(null);
+  const menuId = useId();
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
+    if (!dialog.open) dialog.showModal();
+    dialog.querySelector('[data-menu-close]')?.focus();
+    const desktop = window.matchMedia('(min-width: 1001px)');
+    const closeOnDesktop = (event) => { if (event.matches) setMenuOpen(false); };
+    desktop.addEventListener?.('change', closeOnDesktop);
+    return () => {
+      desktop.removeEventListener?.('change', closeOnDesktop);
+      if (dialog.open) dialog.close();
+      trigger?.focus({ preventScroll: true });
+    };
+  }, [menuOpen]);
+
+  function closeMenu() {
+    if (reducedMotion) setMenuOpen(false);
+    else setMenuClosing(true);
+  }
+
+  function finishClose(event) {
+    if (event.target === event.currentTarget && event.animationName === 'contactMenuExit') {
+      setMenuOpen(false);
+      setMenuClosing(false);
+    }
+  }
+
+  function closeOnBackdrop(event) {
+    if (event.target !== event.currentTarget) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right ||
+        event.clientY < rect.top || event.clientY > rect.bottom) closeMenu();
+  }
+
+  return (
+    <aside className="leftContainer" aria-label="Sai Kiran's profile">
+      <div className="profile-heading">
+        <div className="profilePicContainer"><img src={require('../Assets/ProfilePic.png')} alt="Sai Kiran Patro" width="180" height="180" /></div>
+        <div className="profile-intro">
+          <p className="profile-name">Sai Kiran Patro</p>
+          <p className="role-badge">Frontend & AI Engineer</p>
+          <p className="profile-location"><MapPin size={13} aria-hidden="true" />Hyderabad, India</p>
+        </div>
+      </div>
+      <button ref={triggerRef} className="profile-menu-trigger"
+        aria-label="Open contact menu" aria-haspopup="dialog"
+        aria-expanded={menuOpen} aria-controls={menuId} onClick={() => { setMenuClosing(false); setMenuOpen(true); }}>
+        <Menu size={21} aria-hidden="true" />
+      </button>
+      <div className="profile-details" id="profile-details"><ProfileDetails /></div>
+      {menuOpen && (
+        <dialog ref={dialogRef} id={menuId} className={menuClosing ? "profile-menu is-closing" : "profile-menu"}
+          aria-labelledby={menuId + '-title'} aria-describedby={menuId + '-description'}
+          onCancel={(event) => { event.preventDefault(); closeMenu(); }}
+          onAnimationEnd={finishClose}
+          onClick={closeOnBackdrop}>
+          <div className="profile-menu-panel">
+            <div className="profile-menu-header">
+              <div>
+                <p className="eyebrow">Let’s connect</p>
+                <h2 id={menuId + '-title'}>Contact & profiles</h2>
+                <p id={menuId + '-description'}>Find me online or reach out directly.</p>
+              </div>
+              <button data-menu-close className="profile-menu-close"
+                aria-label="Close contact menu" onClick={closeMenu}>
+                <X size={20} aria-hidden="true" />
+              </button>
+            </div>
+            <div className="profile-menu-content"><ProfileDetails /></div>
+          </div>
+        </dialog>
+      )}
+    </aside>
+  );
+}
