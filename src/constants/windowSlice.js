@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const windowSlice=createSlice({
 
     name:"window",
-    initialState:"About",
+    initialState:"Home",
     reducers:{
         changeWindow:(state,action)=>{
             return action.payload;

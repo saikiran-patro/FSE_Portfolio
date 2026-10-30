@@ -1,21 +1,14 @@
-import React from 'react'
-import Ripple from './ui/ripple'
-const DownloadBtn = () => {
+import React from 'react';
+import { Download } from 'lucide-react';
+import { profile } from '../constants/portfolio';
+
+export default function DownloadBtn({ compact = false }) {
   return (
-    
-
-    <div className="absolute top-3 right-3 min-mob:top-0 min-mob:-right-[10px]">
-    <div className="relative flex  flex-col items-center justify-center overflow-hidden  h-[150px] bg-transparent border-none shadow-none w-[150px]">
-      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-white">
-      <a href="../Assets/SAI_KIRAN_PATRO_SDE.pdf" download="SAI KIRAN PATRO_SDE.pdf">
-       <button><img alt="Download Resume" className="w-[35px]" src={require('../Assets/download.svg').default} /></button>
-      </a>
-      </p>
-      <Ripple />
-    </div>
-    </div>
-  
-  )
+    <a className={'button button-download' + (compact ? ' sidebar-resume' : '')}
+      href={profile.resume} download="Sai_Kiran_Patro_Resume.pdf">
+      <span className="download-symbol"><Download size={17} aria-hidden="true" /></span>
+      <span>Download resume</span>
+      <span className="file-format">PDF</span>
+    </a>
+  );
 }
-
-export default DownloadBtn

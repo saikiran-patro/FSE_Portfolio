@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Sai Kiran Patro's portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React portfolio with the existing charcoal/orange theme, professional presentation, responsive layouts, and a floating mobile dock. Personal interests are confined to About.
 
-## Available Scripts
+## Local development
 
-In the project directory, you can run:
+- `npm install`
+- `npm run dev` (defaults to http://localhost:3000)
+- `npm test -- --watchAll=false --runInBand`
+- `npm run build` (static production files in `build/`)
 
-### `npm start`
+If port 3000 is busy, use `$env:PORT='3001'; npm run dev` in PowerShell.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Navigation uses URL hashes (`#home`, `#about`, `#resume`, `#projects`, `#youtube`, `#contact`) so direct links, reloads, and browser back/forward work on static hosting.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Content
 
-### `npm test`
+- `src/constants/portfolio.js`: contact details, navigation, skills, achievement evidence, and resume path.
+- `src/components/Resume.js`: experience and education.
+- `public/projects.json`: project descriptions, links, technologies, and thumbnails.
+- `src/constants/ytLists.js`: YouTube videos.
+- `public/Assets/Sai_Kiran_Patro_Resume.pdf`: the recruiter-facing download. The supplied India resume is preserved as the source.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Regenerate the PDF
 
-### `npm run build`
+Run `python scripts/build_resume.py` with Python packages `reportlab` and `pypdf` installed. The script currently uses Windows Calibri fonts. It writes the one-page PDF to `output/pdf/`, validates the page count and key content, and updates the public download.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The PDF uses selectable text, conventional sections, and clickable contact/project/certification links. Claims and evidence links come from the supplied resume.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contact map and client projects
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run `node scripts/build_contact_map.cjs` to regenerate the local map SVG using the installed `svg-dotted-map` package. Geometry is generated ahead of time to keep first navigation responsive.
 
-### `npm run eject`
+Ropana Ayurvedic Hospital is a featured freelance project in the portfolio only. Do not add it to the downloadable resume; the PDF generator explicitly checks its exclusion.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## UX notes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The outer frame is constrained to the viewport. Only the right content panel scrolls during browsing; the section header and profile stay in place. On short screens the profile can also be scrolled independently to keep its contact links reachable.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Mobile: fixed floating dock with visible labels, current-page indicators, safe-area padding, and independent scrolling inside the content panel.
+- Tablets: compact expandable profile with desktop section navigation.
+- SVG cloud: local technology SVGs, AI tool icons, a pause control, reduced-motion support, and no network fetch at runtime.
+- Contact: a locally cached Magic UI dotted map pointing to India, work-location preferences, email, phone, LinkedIn, copy-email action, and the existing Formspree form. Form submission requires the existing Formspree endpoint to remain active.
+- Build assets stay in the current repository. No production deployment is configured by this change.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+See `THIRD_PARTY_NOTICES.md` for asset and interaction sources.
